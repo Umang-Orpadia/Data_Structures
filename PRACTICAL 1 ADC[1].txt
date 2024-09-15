@@ -1,0 +1,132 @@
+Write a PL/SQL program to take a numeric input from the user and check whether a user has entered an even number or an odd number using IF THEN ELSE statement.
+DECLARE
+user_input NUMBER;
+BEGIN
+user_input := &user_input;
+DBMS_OUTPUT.PUT_LINE(user_input);
+IF MOD(user_input, 2) = 0 THEN
+DBMS_OUTPUT.PUT_LINE('You entered an even number!');
+ELSE
+DBMS_OUTPUT.PUT_LINE('Youe entered an odd number!');
+END IF;
+END;
+/
+
+Write a PL/SQL program to find the greatest number among two given numbers.
+-- PL/SQL program to compare two numbers
+
+DECLARE
+    a NUMBER := 10;
+    b NUMBER := 15;
+BEGIN
+    IF (a > b) THEN
+        DBMS_OUTPUT.PUT_LINE('a is greater than b');
+    ELSIF (a < b) THEN
+        DBMS_OUTPUT.PUT_LINE('a is lesser than b');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('a and b are equal');
+    END IF;
+END;
+
+Write a PL/SQL program to take input from a user for age and print a message according to the age entered by the user using IF THEN ELSIF ELSE END IF statement. (age<11 ‘I am Child’, age<20 ‘I am Young’, age<40 ‘I am in Thirties’, else ‘I am always Young’).
+
+DECLARE
+age NUMBER;
+BEGIN
+age := &age;
+IF (age < 11) THEN
+DBMS_OUTPUT.PUT_LINE('I am a Child');
+ELSIF (age < 20) THEN
+DBMS_OUTPUT.PUT_LINE('I am Young');
+ELSIF (age < 40) THEN
+DBMS_OUTPUT.PUT_LINE('I in Thirties');
+ELSE
+DBMS_OUTPUT.PUT_LINE('I am always Young');
+END IF;
+END;
+/
+
+Write a PL/SQL program to print the grade based on the given marks with else condition (mark >= 70 ‘Grade A’, mark >=40 and mark<70 ‘Grade B’, mark >=35 and mark<40 ‘Grade C’, else "NoGrade').
+
+DECLARE
+marks NUMBER;
+BEGIN
+marks := &marks;
+IF (marks >= 70) THEN
+DBMS_OUTPUT.PUT_LINE('Grade A');
+ELSIF (marks >= 40 AND marks < 70) THEN
+DBMS_OUTPUT.PUT_LINE('Grade B');
+ELSIF (marks >= 35 AND marks < 40) THEN
+DBMS_OUTPUT.PUT_LINE('Grade C');
+ELSE
+DBMS_OUTPUT.PUT_LINE('No Grade');
+END IF;
+END;
+/
+
+ Write a PL/SQL program to demonstrate a Simple CASE statement.
+-- PL/SQL program to demonstrate a Simple CASE statement
+
+DECLARE
+    day_number NUMBER;
+    day_name VARCHAR2(20);
+BEGIN
+    -- Get day number input from the user
+   day_number := &day_number;
+
+    -- Simple CASE statement to find the corresponding day name
+    CASE day_number
+        WHEN 1 THEN
+            day_name := 'Sunday';
+        WHEN 2 THEN
+            day_name := 'Monday';
+        WHEN 3 THEN
+            day_name := 'Tuesday';
+        WHEN 4 THEN
+            day_name := 'Wednesday';
+        WHEN 5 THEN
+            day_name := 'Thursday';
+        WHEN 6 THEN
+            day_name := 'Friday';
+        WHEN 7 THEN
+            day_name := 'Saturday';
+        ELSE
+            day_name := 'Invalid day number';
+    END CASE;
+
+    DBMS_OUTPUT.PUT_LINE('The day is: ' || day_name);
+END;
+/
+
+Write a PL/SQL program to demonstrate a Searched CASE statement.
+
+-- PL/SQL program to demonstrate a Searched CASE statement for grading
+
+DECLARE
+    marks NUMBER;
+    grade VARCHAR2(2);
+BEGIN
+    marks := &marks;
+    CASE
+        WHEN marks >= 90 THEN
+            grade := 'A+';
+        WHEN marks >= 80 THEN
+            grade := 'A';
+        WHEN marks >= 70 THEN
+            grade := 'B';
+        WHEN marks >= 60 THEN
+            grade := 'C';
+        WHEN marks >= 50 THEN
+            grade := 'D';
+        ELSE
+            grade := 'F';
+    END CASE;
+
+    DBMS_OUTPUT.PUT_LINE('Your grade is: ' || grade);
+END;
+/
+
+
+
+
+
